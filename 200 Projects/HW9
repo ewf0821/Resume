@@ -1,0 +1,78 @@
+    .data
+prompt: .asciiz "Enter a number (1 - 20): "
+errorMsg1: .asciiz "Number must be > 0, try again.\n"
+errorMsg2: .asciiz "Number must be < 21, try again.\n"
+resultMsg: .asciiz "The fibonacci value is: "
+
+    .text
+    .globl main
+
+main:
+    # Allocate space on the stack for variables
+    sub $sp, $sp, 4  # Reduced stack allocation
+
+    # Initialize number to -1
+    li $t1, -1
+    sw $t1, 0($sp)
+
+loop:
+    # Get user input
+    li $v0, 4
+    la $a0, prompt
+    syscall
+
+    li $v0, 5
+    syscall
+    move $t0, $v0  # Store user input in $t1
+
+    # Check if number is greater than or equal to 21
+    bge $t0, 21, check_upper
+
+    # Check if the number is less than or equal to 0
+    blez $t0, check_lower_bound
+
+    # Load user input from $t1 and call fib
+    move $a0, $t0
+    jal fib
+
+check_lower_bound:
+    li $v0, 4
+    la $a0, errorMsg1
+    syscall
+    j loop
+
+check_upper:
+    li $v0, 4
+    la $a0, errorMsg2
+    syscall
+    j loop
+
+fib:
+    # $a0 = n
+    # $v0 = result
+
+    # Save the current frame
+    sub $sp, $sp, 8
+    sw $ra, 0($sp)  # Save return address
+    sw $s0, 4($sp)  # Save $s0 (temp)
+
+    # Base case: if n is less than 2, return n
+    blt $a0, 2, base_case
+    # Recursive case
+    sub $a0, $a0, 2
+    jal fib
+    move $s0, $v0
+
+    add $a0, $a0, 1
+    jal fib
+
+    # Add the results
+    add $v0, $s0, $v0
+    jr $ra
+
+    # Clean up stack frame and return
+    base_case:
+    lw $ra, 0($sp)
+    lw $s0, 4($sp)
+    add $sp, $sp, 8
+    jr $ra

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>5 Day Forecast</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="baseGrid">
+        <!-- displays the website title in upper right corner -->
+        <div class="websiteTitle">
+            The Weather
+        </div>
+        
+        <!-- displays search bar for website in upper center area-->
+        <div class="searchBar">
+            <input type="text" id="location" placeholder="Find a location...">
+            <button onclick="loadForecast()">Get Weather</button><br>
+        </div>
+
+      <!-- displays the navigation buttons for webpage-->
+      <div class="navmain">
+        <div class="navbar">
+          <div>
+            <a class="navigation" href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/today/index.html">
+              <center>Today</center>
+            </a>
+          </div>
+          <div>
+            <a class="navigation" href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/10day/index.html">
+              <center>5 Day Forecast</center>
+            </a>
+          </div>
+          <div>
+            <a class="navigation" href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/monthly/index.html">
+              <center>Weather Map</center>
+            </a>
+          </div>
+        </div>
+      </div>
+
+        <!-- Currently a template of today's weather page -->
+        <!-- Displays the main grid area for webpage-->
+        <div class="main">
+            <!-- Displays the title for location and what weather will be displayed -->
+            <h1 id="area"></h1>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="6" id="date1" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background1"></td>
+                    <td colspan="1" id="temp1"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind1"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date2" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background2"></td>
+                    <td colspan="1" id="temp2"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind2"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date3" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background3"></td>
+                    <td colspan="1" id="temp3"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind3"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date4" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background4"></td>
+                    <td colspan="1" id="temp4"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind4"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date5" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background5"></td>
+                    <td colspan="1" id="temp5"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind5"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date6" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background6"></td>
+                    <td colspan="1" id="temp6"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind6"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date7" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background7"></td>
+                    <td colspan="1" id="temp7"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind7"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date8" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background8"></td>
+                    <td colspan="1" id="temp8"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind8"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date9" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background9"></td>
+                    <td colspan="1" id="temp9"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind9"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date10" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background10"></td>
+                    <td colspan="1" id="temp10"></td>
+                </tr>
+                    <td colspan="1" id="wind10"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date11" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background11"></td>
+                    <td colspan="1" id="temp11"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind11"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date12" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"  rowspan="2" class="weatherimage" id="background12"></td>
+                    <td colspan="1" id="temp12"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind12"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date13" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background13"></td>
+                    <td colspan="1" id="temp13"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind13"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date14" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background14"></td>
+                    <td colspan="1" id="temp14"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind14"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date15" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background15"></td>
+                    <td colspan="1" id="temp15"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind15"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date16" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background16"></td>
+                    <td colspan="1" id="temp16"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind16"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date17" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background17"></td>
+                    <td colspan="1" id="temp17"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind17"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date18" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background18"></td>
+                    <td colspan="1" id="temp18"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind18"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date19" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background19"></td>
+                    <td colspan="1" id="temp19"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind19"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date20" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background20"></td>
+                    <td colspan="1" id="temp20"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind20"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date21" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background21"></td>
+                    <td colspan="1" id="temp21"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind21"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date22" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background22"></td>
+                    <td colspan="1" id="temp22"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind22"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date23" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background23"></td>
+                    <td colspan="1" id="temp23"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind23"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date24" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background24"></td>
+                    <td colspan="1" id="temp24"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind24"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date25" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background25"></td>
+                    <td colspan="1" id="temp25"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind25"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date26" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background26"></td>
+                    <td colspan="1" id="temp26"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind26"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date27" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background27"></td>
+                    <td colspan="1" id="temp27"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind27"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date28" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background28"></td>
+                    <td colspan="1" id="temp28"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind28"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date29" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background29"></td>
+                    <td colspan="1" id="temp29"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind29"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date30" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background30"></td>
+                    <td colspan="1" id="temp30"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind30"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date31" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background31"></td>
+                    <td colspan="1" id="temp31"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind31"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date32" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background32"></td>
+                    <td colspan="1" id="temp32"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind32"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date33" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background33"></td>
+                    <td colspan="1" id="temp33"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind33"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date34" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background34"></td>
+                    <td colspan="1" id="temp34"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind34"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date35" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background35"></td>
+                    <td colspan="1" id="temp35"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind35"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date36" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background36"></td>
+                    <td colspan="1" id="temp36"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind36"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date37" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background37"></td>
+                    <td colspan="1" id="temp37"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind37"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date38" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background38"></td>
+                    <td colspan="1" id="temp38"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind38"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date39" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background39"></td>
+                    <td colspan="1" id="temp39"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind39"></td>
+                </tr>
+            </table>
+            <table class="forecast" border=1>
+                <tr>
+                    <td colspan="5" id="date40" class="tabletitle"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" rowspan="2" class="weatherimage" id="background40"></td>
+                    <td colspan="1" id="temp40"></td>
+                </tr>
+                <tr>
+                    <td colspan="1" id="wind40"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

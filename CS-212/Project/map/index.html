@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Map</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="baseGrid">
+      <!-- displays the website title in upper right corner -->
+        <div class="websiteTitle">
+            The Weather
+        </div>
+
+      <!-- displays search bar for website in upper center area-->
+      <div class="searchBar">
+            <input type="text" id="location" placeholder="Find a location...">
+            <button onclick="loadMap()">Get Weather</button><br>
+      </div>
+
+      <!-- displays the navigation buttons for webpage-->
+      <div class="navmain">
+        <div class="navbar">
+          <div>
+            <a class="navigation" href="#todayweather">
+              <center>Today</center>
+            </a>
+          </div>
+          <div>
+            <a class="navigation" href="#5day">
+              <center>5 Day Forecast</center>
+            </a>
+          </div>
+          <div>
+            <a class="navigation" href="#map">
+              <center>Weather Map</center>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Currently a template of weather map page -->
+      <!-- displays the main grid area for webpage-->
+      <div class="main">
+            <div class="mainBody">
+                <h1>WEATHER MAP</h1>
+                <div class="iframearea">
+                    <div class="crop">
+                        <iframe src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=30&lon=-20&zoom=3" id="weathermap"></iframe>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+    <script src="script.js"></script>"
+  </body>
+
+  <!-- Utilize javascript to develop a clickable dropdown menu -->
+</html>

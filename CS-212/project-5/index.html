@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<!-- root element -->
+<html>
+  <head>
+    <title>Project 5</title>
+    <style>
+      body {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "sidebar main"
+          "sidebar main"
+          "footer footer";
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: auto 200px auto;
+
+        header {
+          grid-area: header;
+        }
+
+        .sidebar {
+          display: flex;
+          flex-direction: column;
+        }
+        .main {
+          grid-area: main;
+          overflow: scroll;
+        }
+        .footer {
+          grid-area: footer;
+          text-align: center;
+        }
+        .skills-container {
+          display:flex;
+          flex-direction: center;
+          align-items: center;
+          text-align: center;
+        }
+        .project-container {
+          display:grid;
+          grid-template-areas: 
+          "header header"
+          "pic     pic";
+
+        }
+        .button {
+          display:inline-block;
+          padding: 10px 20px;
+          width: 200px;
+          height: 10px;
+          background-color: plum;
+          color:pink;
+          transition: width 15s, height 40s;
+
+        }
+        .button:hover{
+          background-color: rgb(144, 6, 144);
+          width: 500px;
+          height: 1000px
+
+        }
+        .pic{
+          position: relative;
+        }
+        .pic img{
+            width: 500px;
+            height: 500px;        
+        }  
+        .overlay{
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          transition: opacity .5s ease;
+          background-color: bisque;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .pic:hover .overlay{
+          opacity: 1;
+        }
+        .funskills{
+         transform: translate(300px, 50%);
+        }
+        .flippy{
+          transform: rotate(0.5turn);
+          transform: skew(5deg,20deg);
+        }
+      }
+      p{
+        margin-top: 100px;
+        margin-bottom: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+        font-size: 10px;
+      }
+      h1{
+        padding-left: 10%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        padding-right: 10%;
+        color: red;
+      }
+      h3{
+        color: red;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .skills-container {background: bisque}
+      }
+      @media only screen and (min-width: 992px){
+        .footer {background: rgb(6, 175, 175)}
+      }
+      @media only screen and (min-width: 600px){
+        .project-container {background: green;}
+      }
+    </style>
+  </head>
+
+  <!-- body section -->
+  <body>
+    <header>
+      <h1>Welcome</h1>
+    </header>
+
+    <div class="sidebar">
+      <a href="#summary">Summary</a>
+      <br />
+      <a href="#education">Education</a>
+      <br />
+      <a href="#skills">Skills</a>
+      <br />
+      <a href="#projects">Projects</a>
+      <br />
+      <a href="#contact-info">Contact Info</a>
+    </div>
+
+
+    <div class="main">
+    <!--SUMMARY-->
+    <div class="summary" id="summary">
+      <h2>Ethan Ferguson</h2>
+      <h3>Computer Science</h3>
+      <p>
+        Hi, my name is Ethan Ferguson and I am a junior at NAU and currently a
+        computer science major. I am interested in computer science because its
+        basically just a big puzzle that you need to solve and once it works its
+        a great feeling.
+      </p>
+    </div>
+    <!--EDUCATION-->
+    <div class="education" id="education">
+      <h3><u>Education</u></h3>
+      <table>
+        <tr>
+          <th><b>Northern Arizona University</b></th>
+        </tr>
+        <tbody>
+        <tr>      
+          <td>Student</td>
+        </tr>
+        <tr>
+          <td>Computer Science Major</td>
+        </tr>
+        <tr>
+          <td>August 2021 - Present, Flagstaff, AZ</td>
+        </tr>
+        </tbody>
+      </table>
+      <table>
+        <tr>
+          <th><b>Royal High School</b></th>
+        </tr>
+        <tbody>
+        <tr>      
+          <td>High school diploma</td>
+        </tr>
+        <tr>
+          <td>August 2018 - June 2021, Simi Valley, CA</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--SKILLS-->
+    <div class="skills-container">
+    <div class="skills" id="skills">
+      <h3><u>Skills</u></h3>
+      <p>
+        <b>Computer Science Skills:</b><br> 
+        <i>Proficient in:</i>
+        <ul>
+          <li>C</li>
+          <li>Python</li>
+          <li>MIPS</li>
+        </ul>
+        <i>Expierenced:</i>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul> 
+        <div class="funskills" id="funskills">
+        <b>General Skills:</b>
+        <br />
+        <i>Proficient in:</i>
+        <ul>  
+          <li>Google Drive</li>
+          <li>MS Ooffice</li>
+          <li>Guest Services</li>
+          <li>Communication</li>
+          <li>Organization</li>
+          <li>Problem Solver</li>
+        </ul>
+        </div>
+        <div class="flippy" id="flippy">
+        <b>Languages:</b>
+        <ul>
+          <li>English</li>
+          <li>Elementary Spanish</li>
+        </ul>
+        </div>
+      </p>  
+    </div>
+    </div>
+    <!--PROJECTS-->
+    <div class="project-container">
+    <div class="projects" id="projects">
+    <h3><u>Projects</u></h3>
+    <header>Website Design</header>
+    <div class="pic" id="pic">
+      <img src="Project_Photo.png" alt="Funny photo">
+      <img src="Project_Photo2.png" alt="Funny photo 2">
+      <div class="overlay">
+        <h3>Hi</h3>
+      </div> 
+    </div>
+    </div>
+    </div>
+  </div>
+  <div class="footer">
+    <!--CONTACT INFO-->
+    <div class="contact-info" id="contact-info">
+      <h3>Contact Information</h3>
+      <p>
+        <b>Email:</b> <a href="mailto:ewf0821@gmail.com">ewf0821@gmail.com</a>
+        <b>Phone:</b><a href="tel:(805)428-0376">(805)428-0376</a>     
+      </p>
+      <h3>Download Resume:</h3>
+      <a href="Resume.pdf" download="Resume.pdf" class="button">Ferguson_Ethan Resume</a>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sign Up</h1>
+    </header>
+
+    <main>
+      <form>
+        <section id="userDetails" name="userDetails">
+          <h3>User Details</h3>
+
+          <label for="fullName">Full Name:</label>
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            placeholder="Enter your full name"
+            required
+          />
+
+
+            <br>
+
+
+          <label for="emailName">Email:</label>
+          <input
+            type="text"
+            name="emailName"
+            id="emailName"
+            placeholder="abc123@email.com"
+            required
+          />
+
+
+            <br>
+
+
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" required />
+
+
+            <br>
+
+
+          <label for="profession">Profession:</label>
+          <select name="profession" id="profession">
+            <option values="Student">Student</option>
+            <option values="Working">Working Professional</option>
+            <option values="Professor">Professor</option>
+        </select>
+
+        <br>
+
+            <label for="linkedin">LinkedIn Profile:</label>
+            <input type="url" name="url" id="url" placeholder="https://example.com" required />
+            
+            
+        <br>
+
+            <label for="profilePicture">Profile Picture</label>
+            <input type="file" name="profilePicture" id="profilePicture">
+
+        <br>
+
+            <label for="chkBox">Subscribe to Newsletter?</label>
+            <input type="checkbox" name="chkBox" id="chkBox">
+
+        <br>
+
+        <button
+        onclick="window.location='https://ewf25.z13.web.core.windows.net/homework3/login'"
+      >
+        Login
+      </button>
+      </form>
+    </main>
+  </body>
+</html>

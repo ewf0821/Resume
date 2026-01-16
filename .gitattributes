@@ -1,0 +1,2 @@
+*.exe filter=lfs diff=lfs merge=lfs -text
+480[[:space:]]Projects/Sim_2/GitHubDesktopSetup-x64.exe filter=lfs diff=lfs merge=lfs -text

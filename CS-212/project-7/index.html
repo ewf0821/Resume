@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and Event Handling Tasks</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            gap: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* Button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Input field styling */
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: calc(100% - 100px);
+            margin-right: 10px;
+        }
+
+        /* List item styling */
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Select styling */
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Color div styling */
+        #colorDiv {
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Hidden class for toggling */
+        .hidden {
+            display: none;
+        }
+
+        /* Error message styling */
+        #errorText {
+            margin-top: 10px;
+            color: red;
+        }
+
+        /* Form styling */
+        form {
+            margin-bottom: 20px;
+        }
+
+        /* Form group styling */
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        /* Form label styling */
+        label {
+            margin-right: 10px;
+        }
+
+        /* Form button styling */
+        form button {
+            background-color: #28a745;
+        }
+
+        /* Form button hover styling */
+        form button:hover {
+            background-color: #218838;
+        }
+
+        #toggleBtn, #incrementBtn {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>DOM and Event Handling Tasks</h1>
+
+        <!-- Task 1: Click Me Button -->
+        <button id="clickMeBtn">Click Me</button>
+
+        <!-- Task 2: Input Field and Submit Button -->
+        <div class="form-group">
+            <input type="text" id="inputField" placeholder="Enter text">
+            <button id="submitButton">Submit</button>
+        </div>
+        <span>Entered Text:</span><p id="outputParagraph">-</p>
+
+        <!-- Task 3: List with Delete Buttons -->
+        <ul id="itemList">
+            <li>Item 1 <button id="1" class="deleteBtn">Delete</button></li>
+            <li>Item 2 <button id="2" class="deleteBtn">Delete</button></li>
+            <li>Item 3 <button id="3" class="deleteBtn">Delete</button></li>
+        </ul>
+
+        <!-- Task 4: Dropdown Select and Color Div -->
+        <div class="form-group">
+            <select id="colorSelect">
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <span>Selected Color:</span><div id="colorDiv"></div>
+        </div>
+
+        <!-- Task 5: Toggle Button and Hidden Div -->
+        <div class="form-group">
+            <button id="toggleBtn">Toggle</button>
+            <div id="toggleDiv" class="hidden">
+                This div will be toggled.
+            </div>
+        </div>
+
+        <!-- Task 6: Counter Button -->
+        <div class="form-group">
+            <button id="incrementBtn">Increment</button>
+            <p id="counterText">Counter: 0</p>
+        </div>
+
+        <!-- Task 7: Form Validation -->
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="errorText"></p>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+
+
+</html> 

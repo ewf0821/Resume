@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Today</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="baseGrid">
+      <!-- displays the website title in upper right corner -->
+      <div class="websiteTitle">The Weather</div>
+
+      <div class="searchBar">
+        <!-- displays search bar for website in upper center area-->
+        <input type="text" id="location" placeholder="Find a location..." />
+        <button onclick="loadWeather()">Get Weather</button>
+      </div>
+      <!-- displays the navigation buttons for webpage-->
+      <div class="navmain">
+        <div class="navbar">
+          <div>
+            <a
+              class="navigation"
+              href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/today/index.html"
+            >
+              <center>Today</center>
+            </a>
+          </div>
+          <div>
+            <a
+              class="navigation"
+              href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/10day/index.html"
+            >
+              <center>5 Day Forecast</center>
+            </a>
+          </div>
+          <div>
+            <a
+              class="navigation"
+              href="https://mal729.z1.web.core.windows.net/CS212/project/phase-1/monthly/index.html"
+            >
+              <center>Weather Map</center>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Currently a template of today's weather page -->
+      <!-- displays the main grid area for webpage-->
+      <div class="main" id="main">
+        <h1 id="area">TODAY'S WEATHER</h1>
+        <center>
+          <table class="dailytable">
+            <tr>
+              <td><h2 id="temp" class="dailytemp"></h2></td>
+              <td><h2 id="wind" class="wind"></h2></td>
+            </tr>
+          </table>
+
+          <table class="othertable">
+            <tr>
+              <td class="othertemp">High:</td>
+              <td id="highTemp" class="othertemp"></td>
+            </tr>
+            <tr>
+              <td class="othertemp">Low:</td>
+              <td id="lowTemp" class="othertemp"></td>
+            </tr>
+            <tr>
+              <td class="othertemp">Feels like:</td>
+              <td id="feelslike" class="othertemp"></td>
+            </tr>
+            <tr>
+              <td class="othertemp">Humidity</td>
+              <td id="humidity" class="othertemp"></td>
+            </tr>
+            <tr>
+              <td class="othertemp">Pressure</td>
+              <td id="pressure" class="othertemp"></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+
+  <!-- Utilize javascript to develop a clickable dropdown menu -->
+</html>
