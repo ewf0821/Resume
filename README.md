@@ -42,5 +42,5 @@ It showcases my programming, software development, and systems skills through a 
 - Large files are tracked using Git LFS.
 
 ## Contact
-- [LinkedIn](YOUR_LINK_HERE)  
-- [Email](mailto:YOUR_EMAIL_HERE)
+- [LinkedIn](https://www.linkedin.com/in/ethan-ferguson-0338082a7/)  
+- [Email](mailto:ewf0821@gmail.com)
