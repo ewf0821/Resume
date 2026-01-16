@@ -38,7 +38,7 @@ It showcases my programming, software development, and systems skills through a 
 
 ## How to Run
 - Some projects include scripts, `.exe` files, or configuration files.
-- See individual project folders for instructions.
+- If help is needed to run the porjects just ask and I can help with that
 - Large files are tracked using Git LFS.
 
 ## Contact
